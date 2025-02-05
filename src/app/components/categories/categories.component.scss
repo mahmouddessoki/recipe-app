@@ -16,6 +16,7 @@
         image: linear-gradient(to right, #eea257 0% 15%, #E57537 22% 100%);
         clip: text;
       }
+
       color: transparent;
     }
   }
@@ -35,7 +36,7 @@
         padding: 5px 20px;
         border-radius: 25px;
         cursor: pointer;
-        @include styles.trans("all" , 0.2s , linear);
+        @include styles.trans("all", 0.2s, linear);
         text-transform: capitalize;
       }
 
@@ -67,16 +68,18 @@
 
 
 @media screen and (max-width:991px) {
-  #cats-header {
-    margin-top: 40px;
-    text-align: center;
-  }
+  .cats {
+    #cats-header {
+      margin-top: 40px;
+      text-align: center;
+    }
 
-  #cats-list-uptoMd {
-    display: block;
-  }
+    #cats-list-uptoMd {
+      display: block;
+    }
 
-  #cats-list-fromLg {
-    display: none;
+    #cats-list-fromLg {
+      display: none;
+    }
   }
 }

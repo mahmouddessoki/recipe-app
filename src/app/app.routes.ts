@@ -3,6 +3,6 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { MealDetailsComponent } from './components/meal-details/meal-details.component';
 
 export const routes: Routes = [
-  {path:'',component:CategoriesComponent},
-  {path:'details/:id' , component:MealDetailsComponent}
+  {path:'',component:CategoriesComponent,title: 'Recipes'},
+  {path:'details/:id' , component:MealDetailsComponent , title: 'Details'},
 ];

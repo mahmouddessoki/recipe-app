@@ -57,7 +57,7 @@ export class CategoriesComponent {
 
   }
   ngOnInit(): void {
-    const cat:string = localStorage.getItem("currentCat") as string;
+    const cat:any = localStorage.getItem("currentCat") || "all";
     if(cat === "all"){
       this.getAllMeals()
     }else {
