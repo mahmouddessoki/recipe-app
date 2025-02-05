@@ -1,0 +1,16 @@
+
+<div class="cat-item h-100">
+  <div class="meal-img">
+    <img [src]="meal.strMealThumb" class="w-100" [alt]="meal.strMeal">
+
+  </div>
+  <h3 class="h4" >{{meal.strMeal.split(" ").slice(0,2).join(",")}}</h3>
+
+  @if (meal.strArea) {
+  <div class="location d-flex justify-content-center mb-4 mt-2 align-items-center column-gap-2">
+    <i class="fa-solid fa-earth-americas"></i>
+    <span>{{meal.strArea}}</span>
+  </div>
+  }
+  <a class="btn btn-success text-capitalize" [routerLink]="'details/'+meal.idMeal">view recipe</a>
+</div>

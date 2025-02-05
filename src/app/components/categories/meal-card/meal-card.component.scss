@@ -1,0 +1,60 @@
+.cat-item {
+  & {
+    text-align: center;
+    background-color: white;
+    padding: 0px 30px 20px;
+    border-radius: 30px;
+    transition: all 0.2s linear;
+  }
+
+  &:hover {
+    box-shadow: 0px 10px 10px #e5dfdf;
+    transform: scale(1.03);
+
+    .meal-img {
+      transform: rotate(360deg);
+    }
+  }
+
+  .meal-img {
+    width: 80%;
+    border-radius: 50%;
+    position: relative;
+    top: -35px;
+    margin: auto;
+    box-shadow: 0px 10px 10px #6d6c6c;
+    transition: all 0.4s linear;
+
+    img {
+      border-radius: inherit;
+    }
+  }
+
+
+
+  h3 {
+    font: {
+      weight: bold;
+      size: 20px;
+    }
+    margin: 10px 0px 13px;
+  }
+
+  .location {
+    color: rgba(5, 150, 104, 0.86);
+  }
+
+  button {
+    padding: 5px 20px;
+    background-color: rgba(5, 150, 104, 0.86);
+    font-size: 17px;
+    text-transform: capitalize;
+    border-radius: 30px;
+    border: 0;
+
+    &:hover {
+      box-shadow: 0px 10px 10px #ccc8c8;
+      background-color: rgba(5, 150, 104, 0.99);
+    }
+  }
+}

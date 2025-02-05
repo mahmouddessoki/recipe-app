@@ -1,0 +1,17 @@
+$main-color: #F29724;
+
+@mixin hoverEffect($color, $scaleValue) {
+  box-shadow: 0px 10px 10px 5px #fff7ed;
+  transform: scale(1.08);
+}
+
+@mixin trans($prop , $dur , $timingFunction) {
+  transition: $prop $dur $timingFunction;
+}
+
+@mixin afterAndBefore($w: 35px) {
+  display: block;
+  width: $w;
+  height: 2px;
+  background-color: #6B7280;
+}

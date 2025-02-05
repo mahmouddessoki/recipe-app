@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+  font-family: cursive;
+}
+
+body {
+  background-color: #F4F2EE;
+  height: 1000px;
+}
+
+@function PXToRem($wInPx) {
+  $wInRem: $wInPx / 16;
+  @return #{$wInRem}rem;
+}
+
+
+.cats {
+  & {
+    width: calc(100% - 250px);
+    margin-left: auto;
+  }
+  .container {
+    min-height: 100vh;
+  }
+
+  #cats-header {
+    h2 {
+      margin-bottom: 30px;
+
+      font: {
+        family: "Pacifico", serif;
+        size: 40px;
+        weight: bold;
+      }
+
+      background-image: linear-gradient(to right, #eea257 0% 15%, #E57537 22% 100%);
+      color: transparent;
+      background-clip: text;
+    }
+  }
+}
+
+
+
+@media screen and (max-width:991px) {
+  .cats {
+    & {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+
+}

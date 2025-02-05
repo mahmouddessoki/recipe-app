@@ -1,0 +1,46 @@
+<section id="details" class="cats py-5 px-3">
+  <div id="cats-header" class="mt-5 mt-lg-0">
+    <h2 >{{meal.strMeal}}</h2>
+  </div>
+  <div id="meal-info" class="container my-5">
+    <div class="row gy-5 mb-5">
+      <div class="col-lg-4 col-12">
+        <div id="meal-img">
+          <img [src]="meal.strMealThumb" class="w-100 rounded-4 shadow" [alt]="meal.strMeal">
+          <div id="meal-media " class="d-flex mt-4 justify-content-center column-gap-3">
+            <a target="_blank" [href]="meal.strYoutube" class="btn btn-danger text-white">
+              <i class="fa-brands fa-youtube"></i>
+              youtube
+            </a>
+            <a href="#" class="btn btn-success textwhite">
+              <i class="fa-solid fa-globe"></i>
+              source
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8 col-12">
+        <p id="meal-description" class="fw-normal">
+          {{meal.strInstructions}}
+
+        </p>
+      </div>
+      <div class="col-12">
+        <div id="meal-Ingredients" class="bg-white py-4 px-3 rounded-2 ">
+          <h5 class="border-bottom border-5 pb-2 h4 mb-3">Ingredients</h5>
+          <ul class="list-unstyled">
+            @for (item of mealIngredients; track $index) {
+
+              <li class="d-flex justify-content-between mb-3 border-bottom border-2  pb-2">
+                <span id="Ingredient" class="text-capitalize">{{item?.ingredient}} :</span>
+                <span id="measure">{{item?.measure}}</span>
+              </li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>

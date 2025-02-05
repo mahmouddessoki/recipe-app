@@ -1,0 +1,71 @@
+<section class="cats py-5 px-4">
+
+  <div id="cats-header">
+    <h2>Learn, Cook, Eat Your Food</h2>
+  </div>
+  <div id="cats-list-fromLg" class="mb-5">
+    <span [class]="{
+      'bg-dark':isCurrentCat('all'),
+      'text-white':isCurrentCat('all'),
+
+    }" (click)="getAllMeals()">all</span>
+    @for (cat of categories; track cat.idCategory) {
+    <span [class]="{
+      'bg-dark':isCurrentCat(cat.strCategory.toLowerCase()),
+      'text-white':isCurrentCat(cat.strCategory.toLowerCase()),
+
+    }" (click)="getMealsByCat(cat.strCategory.toLowerCase())">{{cat.strCategory}}</span>
+    }@empty {
+      <span class="placeholder placeholder-wave col-1"></span>
+      <span class="placeholder placeholder-wave col-1"></span>
+      <span class="placeholder placeholder-wave col-1"></span>
+      <span class="placeholder placeholder-wave col-1"></span>
+      <span class="placeholder placeholder-wave col-1"></span>
+    }
+  </div>
+  <div id="cats-list-uptoMd" class="mb-5 col-10 mx-auto">
+    <select id="" (input)="getSelectedCat($event)" class="form-control shadow-none">
+      <option value="all" [selected]="isCurrentCat('all')" class="text-capitalize">all</option>
+      @for (cat of categories; track cat.idCategory) {
+      <option [selected]="isCurrentCat(cat.strCategory.toLowerCase())" [value]="cat.strCategory"
+        class="text-capitalize">{{cat.strCategory}}</option>
+      }
+    </select>
+  </div>
+
+  <div class="container py-5">
+
+    <div class="row gy-5">
+      @for (meal of meals; track meal.idMeal) {
+
+      <div class="col-lg-4 col-xl-3 col-md-6">
+        <app-meal-card [meal]="meal"></app-meal-card>
+      </div>
+      }@empty {
+        @for (placeholder of placeholders; track $index) {
+
+          <div class="col-lg-4 col-xl-3 col-md-6">
+
+
+            <div class="card position-relative border-0 bg-white rounded rounded-3 shadow" aria-hidden="true">
+              <div class="img-placeholder placeholder placeholder-wave"></div>
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title placeholder-glow col-4 mx-auto mb-4 ">
+                  <span class="placeholder col-12 "></span>
+                </h5>
+                <a class="btn btn-success disabled placeholder placeholder-wave col-8 mx-auto" aria-disabled="true"></a>
+              </div>
+            </div>
+          </div>
+        }
+      }
+
+    </div>
+
+
+
+
+
+  </div>
+
+</section>

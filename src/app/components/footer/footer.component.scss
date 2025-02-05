@@ -1,0 +1,38 @@
+footer {
+  & {
+    position: absolute;
+    width: 100%;
+    z-index: 4444;
+  }
+
+  .brand {
+    & {
+      display: flex;
+      column-gap: 5px;
+    }
+
+    img {
+      width: 50px;
+    }
+  }
+
+  p:nth-of-type(1) {
+    color: #1D4ED8;
+  }
+
+  p:last-child {
+    a {
+      text-decoration: none;
+      &:hover {
+          text-decoration: underline;
+
+      }
+    }
+  }
+
+
+    .container {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 10px;
+    }
+  }

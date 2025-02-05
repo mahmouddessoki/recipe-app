@@ -1,0 +1,133 @@
+
+
+@use "../styles/shared" as styles;
+
+.nav-container {
+  & {
+    background-color: transparent;
+    position: fixed;
+    width: 250px;
+    top: 0;
+    bottom: 0;
+    z-index: 333;
+  }
+  &.active-container {
+    background-color: rgba(0,0,0,0.2);
+  }
+
+
+  .nav-toggler {
+    & {
+      width: fit-content;
+      cursor: pointer;
+      position: absolute;
+      z-index: -1;
+    }
+
+
+    span {
+      @include styles.afterAndBefore();
+      margin: 5px 0;
+    }
+
+    &::before {
+      content: "";
+      @include styles.afterAndBefore()
+    }
+
+    &:after {
+      content: "";
+      @include styles.afterAndBefore(20px)
+    }
+
+  }
+
+  nav {
+    &.open-nav {
+      transform: translateX(0%) !important;
+    }
+
+    & {
+      width: 250px;
+      height: 100%;
+      @include styles.trans(transform, 0.2s, linear);
+
+    }
+
+    .nav-brand {
+      width: 100% !important;
+    }
+
+    .nav-links {
+      & {
+        list-style-type: none;
+        width: 100%;
+      }
+
+
+      li {
+        & {
+          margin-bottom: 30px;
+          border: 1px solid #948c8c;
+          border-radius: 10px;
+          @include styles.trans(box-shadow, 0.1s, linear)
+        }
+
+        &:has(.active) {
+          border-color: styles.$main-color;
+        }
+
+        &:hover {
+          @include styles.hoverEffect(#fff7ed, 1.08)
+        }
+
+        a {
+          text-decoration: none;
+          color: black;
+          text-transform: capitalize;
+          width: 100%;
+          height: 100%;
+          display: block;
+          padding: 5px 15px;
+
+          font: {
+            size: 20px;
+            weight: 600;
+
+          }
+
+
+        }
+
+        .active {
+          background-color: styles.$main-color;
+          border-radius: inherit;
+          color: white;
+          @include styles.hoverEffect(#fff7ed, 1.08);
+
+          &:hover {
+            @include styles.hoverEffect(#f1dbdb, 1.01)
+          }
+
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+@media screen and (max-width:991px) {
+  nav {
+    transform: translateX(-100%);
+  }
+  .nav-container {
+    background-color: teal;
+    width: 0px;
+  }
+
+}

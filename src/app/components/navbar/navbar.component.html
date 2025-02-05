@@ -1,0 +1,45 @@
+<div class="nav-container" [class]="{
+  'w-100': toggleClicked,
+  'active-container': toggleClicked
+}" role="close" (click)="closeNav($event)">
+
+  <div (click)="openNav()" class="nav-toggler d-block d-md-block d-lg-none m-4">
+    <span></span>
+  </div>
+
+
+
+  <nav [class]="{
+    'open-nav': toggleClicked,
+  }" class="p-4 shadow d-flex bg-white flex-column align-items-center">
+
+
+
+    <div class="nav-brand mb-5">
+      <img src="/imgs/logo.png" class="w-100" alt="recipe logo">
+    </div>
+
+    <ul class="nav-links p-0">
+
+      <li class="d-flex">
+        <a routerLink="/" class="active">
+          <i class="fa-solid fa-utensils fa-sm"></i>
+          meals
+        </a>
+      </li>
+      <li>
+        <a routerLink="/">
+          <i class="fa-solid fa-utensils fa-sm"></i>
+          ingredients
+        </a>
+      </li>
+      <li>
+        <a routerLink="/">
+          <i class="fa-solid fa-utensils fa-sm"></i>
+          Area
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+</div>
